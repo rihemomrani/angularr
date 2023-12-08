@@ -1,0 +1,29 @@
+<p style="color: #e91e63;">Liste des produits</p>
+
+<button style="background-color: #e91e63; color: white;" class="btn m-3" routerLink="/add">Ajouter Produit</button>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th style="background-color: #e91e63; color: white;">Id</th>
+            <th style="background-color: #e91e63; color: white;">Title</th>
+            <th style="background-color: #e91e63; color: white;">Price</th>
+            <th style="background-color: #e91e63; color: white;">Quantité</th>
+            <th style="background-color: #e91e63; color: white;">Like</th>
+            <th style="background-color: #e91e63; color: white;">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of listProdcut; let i = index">
+            <td>{{ r.id }}</td>
+            <td>{{ r.title }}</td>
+            <td>{{ r.price }}</td>
+            <td>{{ r.quantity }}</td>
+            <td>{{ r.like }}</td>
+            <td>
+                <button [routerLink]="[r.id]" class="btn btn-rose" (click)="show()">Afficher</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
